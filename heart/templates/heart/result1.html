@@ -1,0 +1,59 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>PROJECT</title>
+    
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.css" integrity="sha512-5A8nwdMOWrSz20fDsjczgUidUBR8liPYU+WymTZP1lmY9G6Oc7HlZv156XqnsgNUzTyMefFTcsFH/tnJE/+xBg==" crossorigin="anonymous" />
+    <script src="Javascript/index.js"></script> 
+    <body Style ="overflow-x: hidden; background-image: url('/static/heart/25101.jpg'); background-size: cover;">
+        <div>
+            <nav class="navbar navbar-dark bg-dark">
+                <div class="container-fluid">
+                  <div class="navbar-header">
+                    <a class="navbar-brand" href="{% url 'index' %}">CODE4CURE</a>
+                  </div>
+                </div>
+              </nav>
+        </div>
+
+
+        <div>
+
+        <div style=" margin-top: 3% ; margin-left: 7%;">
+           
+            <h1>{{ans}}</h1>
+        </div>
+        <div style="margin-left: 9%; font-size: 20px;">
+            {% if lis %}
+                <p> Possible Disease Realted to Heart Can be </p>
+                <ul>
+                {% for dis in lis %}
+                <li> {{dis}}</li>
+                {% endfor %}
+                </ul>
+            {% endif %}
+        </div>
+
+
+            <div class="container" style="margin-top: 15%; margin-left:44%  ;">
+            <i class="fa-3x fa fa-user-md" aria-hidden="true" style="padding-left: 90px;"></i>
+            <div style="padding-top:3%; padding-left:1.4cm ;">
+                <a href="http://localhost:3000"> <button  type="button" class="btn btn-outline-success" >Consult Now</button> </a>
+           </div>
+        </div>
+
+
+
+    
+        </div>
+        
+
+    </body>
+
+   
+    
+</head>

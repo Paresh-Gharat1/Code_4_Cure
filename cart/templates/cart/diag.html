@@ -1,0 +1,172 @@
+{% load static %}
+<!DOCTYPE html>
+<html>
+    <head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<meta http-equiv="X-UA-Compatible" content="ie=edge">
+		<meta name="description" content="This is the description">
+        <title>PharmCure</title>
+        <link rel="stylesheet" href="{% static 'cart/style.css' %}"/>
+		<script src="{% static 'cart/store.js' %}" async></script>
+		<link href="https://fonts.googleapis.com/css?family=Alegreya+SC:900&display=swap" rel="stylesheet">
+		<link href="https://fonts.googleapis.com/css?family=Kulim+Park&display=swap" rel="stylesheet"> 		
+    </head>
+    <body>
+	
+        <header>
+			<div class="container">
+				<div id="branding">
+					<h1>Diagnostic Packages</h1>
+				</div>
+				<nav>
+					<ul> 
+						<li><a href="{% url 'index' %}">Home</a></li>
+						<li>
+							<div class="dropdown">
+								<a class="current" href="{% url 'diag_home' %}">Diagnostic Packages</a>
+								<div>
+								</div>
+							</div> 
+						</li>
+						<li>
+							<div class="dropdown">
+								<a href="{% url 'covid_home' %}">Covid Essentials</a>
+								<div>
+								</div>
+							</div> 
+						</li>
+						<li>
+							<div class="dropdown">
+<a href="#A">Go To CART <input type="image" src="{% static 'cart/cart.png' %}" name="Cart" width="18" height="18"/></a>
+								<div>
+								</div>
+							</div> 
+						</li>
+					</ul>
+				</nav>
+			</div>
+		</header>
+		
+		<section class="main-display">
+			<div class="store-items">
+				<div class="shop-item">
+					<span class="shop-item-title">PharmCure Immunity Care</span>
+					<div class="box">
+						<img class="shop-item-image" src="{% static 'cart/img7.jpg' %}">
+					</div>
+					<div class="shop-item-details">
+						<span class="shop-item-price">₹1099</span>
+						<button class="btn btn-primary shop-item-button" type="button">ADD TO CART</button>
+					</div>
+				</div>
+				<div class="shop-item">
+					<span class="shop-item-title">PharmCure Shield Pack</span>
+					<div class="box">
+						<img class="shop-item-image" src="{% static 'cart/img8.jpg' %}">
+					</div>
+					<div class="shop-item-details">
+						<span class="shop-item-price">₹900</span>
+						<button class="btn btn-primary shop-item-button" type="button">ADD TO CART</button>
+					</div>
+				</div>
+				<div class="shop-item">
+					<span class="shop-item-title">PharmCure Diabetic Checkup</span>
+					<div class="box">
+						<img class="shop-item-image" src="{% static 'cart/img9.jpg' %}">
+					</div>
+					<div class="shop-item-details">
+						<span class="shop-item-price">₹899</span>
+						<button class="btn btn-primary shop-item-button" type="button">ADD TO CART</button>
+					</div>
+				</div>
+			</div>
+			<div class="store-items">
+				<div class="shop-item">
+					<span class="shop-item-title">PharmCure Advance Heart Care</span>
+					<div class="box">
+						<img class="shop-item-image" src="{% static 'cart/img10.jpg' %}">
+					</div>
+					<div class="shop-item-details">
+						<span class="shop-item-price">₹875</span>
+						<button class="btn btn-primary shop-item-button" type="button">ADD TO CART</button>
+					</div>
+				</div>
+				<div class="shop-item">
+					<span class="shop-item-title">Healthy Lung and Body Checkup</span>
+					<div class="box">
+						<img class="shop-item-image" src="{% static 'cart/img20.png' %}">
+					</div>
+					<div class="shop-item-details">
+						<span class="shop-item-price">₹999</span>
+						<button class="btn btn-primary shop-item-button" type="button">ADD TO CART</button>
+					</div>
+				</div>
+				<div class="shop-item">
+					<span class="shop-item-title">Cancer Screening-Male</span>
+					<div class="box">
+						<img class="shop-item-image" src="{% static 'cart/img21.png' %}">
+					</div>
+					<div class="shop-item-details">
+						<span class="shop-item-price">₹699</span>
+						<button class="btn btn-primary shop-item-button" type="button">ADD TO CART</button>
+					</div>
+				</div>
+			</div>
+			<div class="store-items">
+				<div class="shop-item">
+					<span class="shop-item-title">Cancer Screening-Female</span>
+					<div class="box">
+						<img class="shop-item-image" src="{% static 'cart/img22.png' %}">
+					</div>
+					<div class="shop-item-details">
+						<span class="shop-item-price">₹599</span>
+						<button class="btn btn-primary shop-item-button" type="button">ADD TO CART</button>
+					</div>
+				</div>
+				<div class="shop-item">
+					<span class="shop-item-title">Alcohol Impact Checkup</span>
+					<div class="box">
+						<img class="shop-item-image" src="{% static 'cart/img23.png' %}">
+					</div>
+					<div class="shop-item-details">
+						<span class="shop-item-price">₹1499</span>
+						<button class="btn btn-primary shop-item-button" type="button">ADD TO CART</button>
+					</div>
+				</div>
+				<div class="shop-item">
+					<span class="shop-item-title">Fever Screening</span>
+					<div class="box">
+						<img class="shop-item-image" src="{% static 'cart/img24.png' %}">
+					</div>
+					<div class="shop-item-details">
+						<span class="shop-item-price">₹999</span>
+						<button class="btn btn-primary shop-item-button" type="button">ADD TO CART</button>
+					</div>
+				</div>
+			</div>
+		</section>
+		
+		<section class="cart-display">
+			<a name="A"></a>
+			<h1 class="label">Cart</h1>
+			<div class="cart-row">
+                <span class="cart-item cart-header cart-column">ITEM</span>
+                <span class="cart-price cart-header cart-column">PRICE</span>
+                <span class="cart-quantity cart-header cart-column">QUANTITY</span>
+            </div>
+            <div class="cart-items">
+            </div>
+            <div class="cart-total">
+                <strong class="cart-total-title">Total</strong>
+                <span class="cart-total-price">₹0</span>
+            </div>
+            <button class="btn btn-primary btn-purchase" type="button">PURCHASE</button>
+		</section>
+		
+		<footer>
+			<p>&copy; 2021</p>
+		</footer>
+		
+    </body>
+</html>

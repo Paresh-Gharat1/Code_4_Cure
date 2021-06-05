@@ -1,0 +1,332 @@
+*{margin: 0; padding: 0; box-sizing: border-box;
+        
+      }
+a{ text-decoration: none;}
+a:hover{
+    text-decoration: none;
+}
+li{
+    list-style: none;
+}
+
+.header{
+    width: 100%;
+    height: 100vh;
+    background-image: linear-gradient(rgba(0,168,255,0.3), rgba(0,168,255,0.3));
+    background-repeat: no-repeat;
+    background-size: 100% 100%;
+    clip-path: polygon(100% 0%, 100% 75%, 50% 100%,0 75%,0 0);
+        position: relative;
+}
+.header:before
+{
+    content:"";
+    position: absolute;
+   top: 0%;
+    bottom:0%;
+    left: 0%;
+    right: 0%;
+    opacity: 0.4;
+    z-index: -1;
+    background: linear-gradient(to right, #1e5799 0%, #3ccdbb 1%, #16c9f6 100%  );
+}
+
+.floatRight
+{
+    float: right;
+    margin-left:80px;
+    margin-top: 65px;
+    margin-right: 25px;
+}
+
+.header-section
+{
+    width: 100%;
+    height:inherit;
+    color:white;
+    text-align: left;
+    position: relative;
+}
+.center-div{
+
+    width: 100%;
+    height: auto;
+    position: absolute;
+    top:1%;
+    left :20%;
+
+}
+
+.sect{
+    display:flex;
+
+}
+.leftside{
+    width:45%; height: auto;
+    overflow: hidden; margin-top: 90px; margin-left: 20px;
+}
+.leftside img { width:500px; height: 400px;
+}
+.rightside
+{
+    width: 55%; height: 300px; color:white;
+    text-align :center; margin-top:160px; padding:50px; margin-right: 20px;
+}
+.rightside h1{
+    font-size: 50px; font-weight: 900; text-transform:uppercase;
+}
+.rightside p
+{
+    font-size: 1.1rem;
+    margin-right: 2px;
+}
+/* 
+.rightside button{
+    font-size: 17px; font-weight: bold; color:white; background: linear-gradient(rgba(0,168,255,0.3),rgba(47, 0, 255, 0.651)); border-radius: 4px;
+    padding: 20px 35px;
+}
+
+.rightside button:hover
+{
+    background: linear-gradient(rgba(0,168,255,0.3), rgba(0,168,255,0.3));
+}
+
+*/
+
+.rightside button
+{  margin-top: 30px;
+    margin-right: 15px;
+    font-weight: bold; font-size: 17px; padding:7px 15px;
+}
+.responsive {
+    max-width: 100%;
+    height: auto;
+  }
+
+
+.header-extradiv
+{
+ width:100%; height :100vh;
+ margin:60px 0;
+ text-align: center;
+}
+.extra-div
+{
+    background: #fff;
+    border: medium none;
+    padding: 50px!important;
+    border-radius: 3px;
+    transition: 0.3s;
+   
+}
+
+.extra-div:hover
+{
+    box-shadow: 0 0 20px 0 rgba(0,0,0,0.3);
+    transform: translateY(-20px);
+    background:	#E8E8E8;
+    
+}
+.center 
+{ margin-top: 50px;
+    text-align: center;
+    padding-top: 200px;
+}
+
+
+/************************************************************************************** slider *****************************************************************/
+
+
+.happyclients{
+    width: 100%;
+    height:10vh;
+    padding-top: 220px;
+    padding-bottom: 90px;
+    
+}
+.box
+{
+    text-align: center;
+    border: 1px solid rgba(0,0,0,0.2);
+    box-shadow: 2px 5px 10px 2px rgba(0,0,0,0.3);
+    border-radius: 2px;
+    transition: 0.3s ease;
+    
+}
+.box:hover{
+    background: #16c9f6;
+}
+.box:hover p{
+color: white;
+font-weight: 900%;
+}
+
+.carousel-indicators{
+    position: absolute;
+    right: 0;
+    bottom: -60px!important;
+}
+
+.carousel-indicators li{
+    background-color: #16c9f6!important;
+}
+
+.box a{
+    position: relative;
+}
+
+.box a img {
+    width: 120px;
+    height: 100px;
+    border-radius:50%;
+    margin-top: 20px;
+}
+
+.box a:after{
+    content: "\f10d";
+    font-family: FontAwesome;
+    width: 40px;
+    height: 40px;
+    background: linear-gradient(to right, #1e5799 0%, #3ccdbb 0% #16c9f6 100%);
+    color: blue
+    ;
+    position: absolute;
+    top: 120%;
+    left: 70%;
+    border-radius:50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+}
+.box h1{
+    font-size: 18px;
+    font-weight: 700px;
+    color: #000;
+    margin-bottom: 10px;
+
+}
+.box h2{
+    font-size: 13px;
+    font-weight: 400px;
+    color: gray;
+    margin-bottom: 10px;
+
+}
+.pad
+{
+    padding-top: 40px;
+    margin-bottom: 30%;
+    
+}
+
+
+/* *************************************************************slider end************************************************************************/
+
+
+
+/***************************************************************************contact US ***********************************************************/
+
+.contactUs
+{ margin-top: 400px;
+ width: 100%;
+ height: 100vh;
+ padding: 80px 0;
+ 
+ position: relative;
+ background: #16f6eb;
+}
+
+/* The snackbar - position it at the bottom and in the middle of the screen */
+#snackbar {
+    visibility: hidden; /* Hidden by default. Visible on click */
+    min-width: 250px; /* Set a default minimum width */
+    margin-left: -125px; /* Divide value of min-width by 2 */
+    background-color: #333; /* Black background color */
+    color: #fff; /* White text color */
+    text-align: center; /* Centered text */
+    border-radius: 2px; /* Rounded borders */
+    padding: 16px; /* Padding */
+    position: fixed; /* Sit on top of the screen */
+    z-index: 1; /* Add a z-index if needed */
+    left: 50%; /* Center the snackbar */
+    bottom: 30px; /* 30px from the bottom */
+  }
+  
+  /* Show the snackbar when clicking on a button (class added with JavaScript) */
+  #snackbar.show {
+    visibility: visible; /* Show the snackbar */
+    /* Add animation: Take 0.5 seconds to fade in and out the snackbar.
+    However, delay the fade out process for 2.5 seconds */
+    -webkit-animation: fadein 0.5s, fadeout 0.5s 2.5s;
+    animation: fadein 0.5s, fadeout 0.5s 2.5s;
+  }
+  
+  /* Animations to fade the snackbar in and out */
+  @-webkit-keyframes fadein {
+    from {bottom: 0; opacity: 0;}
+    to {bottom: 30px; opacity: 1;}
+  }
+  
+  @keyframes fadein {
+    from {bottom: 0; opacity: 0;}
+    to {bottom: 30px; opacity: 1;}
+  }
+  
+  @-webkit-keyframes fadeout {
+    from {bottom: 30px; opacity: 1;}
+    to {bottom: 0; opacity: 0;}
+  }
+  
+  @keyframes fadeout {
+    from {bottom: 30px; opacity: 1;}
+    to {bottom: 0; opacity: 0;}
+  }
+
+  /*****************************************************************************ABOUT US*********************************************************/
+
+  .aboutus
+  {
+    margin-top: 400px;
+    width: 100%;
+    height: 100vh;
+    padding: 80px 0;
+    
+    position: relative;
+ 
+  }
+
+  /************************************footer starts**********************************************/
+  .footersection{
+      widows: 100%;
+      height: auto;
+      padding:70px 0 20px 0;
+      background: #00abff;
+      position: relative;
+  }
+
+  .footersection p 
+  {
+      color:#fff;
+  }
+
+  .footersection li a{
+      font-size: 0.8rem;
+      line-height: 1.6;
+      font-weight: 400;
+      color: #fff;
+      text-transform: capitalize;
+      text-align: center;
+  }
+
+  .footersection h3{
+      text-transform: uppercase;
+      color: #fff;
+      margin-bottom: 25px;
+      font-size: 1.2rem!important;
+      font-weight: 600;
+  }
+  .hello1
+  {
+      margin-left: 130px;
+  }

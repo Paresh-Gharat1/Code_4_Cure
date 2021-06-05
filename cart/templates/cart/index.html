@@ -1,0 +1,138 @@
+{% load static %}
+<!DOCTYPE html>
+<html>
+    <head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<meta http-equiv="X-UA-Compatible" content="ie=edge">
+		<meta name="description" content="This is the description">
+        <title>PharmCure</title>
+        <link rel="stylesheet" href="{% static 'cart/style.css' %}"/>
+		<script src="{% static 'store.js' %}" async></script>
+		<link href="https://fonts.googleapis.com/css?family=Alegreya+SC:900&display=swap" rel="stylesheet">
+		<link href="https://fonts.googleapis.com/css?family=Kulim+Park&display=swap" rel="stylesheet"> 
+    </head>
+    <body>
+        <header>
+			<div class="container">
+				<div class="lds-hourglass"></div>
+				<div id="branding">
+					<h1>PharmCure</h1>
+				</div>
+				<nav>
+					<ul> 
+						<li class="current"><a href="{% url 'index' %}">Home</a></li>
+						<li>
+							<div class="dropdown">
+								<a href="{% url 'diag_home' %}">Diagnostic Packages</a>
+								<div>
+								</div>
+							</div> 
+						</li>
+						<li>
+							<div class="dropdown">
+								<a href="{% url 'covid_home' %}">Covid Essentials</a>
+								<div>
+								</div>
+							</div> 
+						</li>
+						<li>
+							<div class="dropdown">
+<a href="#A">Go To CART <input type="image" src="{% static 'cart/cart.png' %}" name="Cart" width="28" height="28"/></a>
+								<div>
+								</div>
+							</div> 
+						</li>	
+					</ul>
+				</nav>
+			</div>
+		</header>		
+		<section class="main-display">
+			<h1 class="label">Most Popular Medicines</h1>
+			<div class="store-items">
+			
+				<div class="shop-item">
+					<span class="shop-item-title">Pulse Oximeter</span>
+					<div class="box">
+						<img class="shop-item-image" src="{% static 'cart/img1.jpg' %}">
+					</div>
+					<div class="shop-item-details">
+						<span class="shop-item-price">₹1700</span>
+						<button class="btn btn-primary shop-item-button" type="button">ADD TO CART</button>
+					</div>
+				</div>
+				
+				<div class="shop-item">
+					<span class="shop-item-title">Digital Flexible Thermometer</span>
+					<div class="box">
+						<img class="shop-item-image" src="{% static 'cart/img2.jpg' %}">
+					</div>
+					<div class="shop-item-details">
+						<span class="shop-item-price">₹220</span>
+						<button class="btn btn-primary shop-item-button" type="button">ADD TO CART</button>
+					</div>
+				</div>
+				<div class="shop-item">
+					<span class="shop-item-title">Punch Tulsi Drop</span>
+					<div class="box">
+						<img class="shop-item-image" src="{% static 'cart/img3.jpg' %}">
+					</div>
+					<div class="shop-item-details">
+						<span class="shop-item-price">₹220</span>
+						<button class="btn btn-primary shop-item-button" type="button">ADD TO CART</button>
+					</div>
+				</div>
+				<div class="shop-item">
+					<span class="shop-item-title">Optima Vaporizer Steam Inhaler</span>
+					<div class="box">
+						<img class="shop-item-image" src="{% static 'cart/img4.jpg' %}">
+					</div>
+					<div class="shop-item-details">
+						<span class="shop-item-price">₹399</span>
+						<button class="btn btn-primary shop-item-button" type="button">ADD TO CART</button>
+					</div>
+				</div>
+				<div class="shop-item">
+					<span class="shop-item-title">Zincovit Syrup</span>
+					<div class="box">
+						<img class="shop-item-image" src="{% static 'cart/img5.webp' %}">
+					</div>
+					<div class="shop-item-details">
+						<span class="shop-item-price">₹135</span>
+						<button class="btn btn-primary shop-item-button" type="button">ADD TO CART</button>
+					</div>
+				</div>
+				<div class="shop-item">
+					<span class="shop-item-title">Huggies Wonderpants</span>
+					<div class="box">
+						<img class="shop-item-image" src="{% static 'cart/img6.jpg' %}">
+					</div>
+					<div class="shop-item-details">
+						<span class="shop-item-price">₹449</span>
+						<button class="btn btn-primary shop-item-button" type="button">ADD TO CART</button>
+					</div>
+				</div>
+			</div>
+		</section>
+		<section class="cart-display">
+			<a name="A"></a>
+			<h1>Cart</h1>
+			<div class="cart-row">
+                <span class="cart-item cart-header cart-column">ITEM</span>
+                <span class="cart-price cart-header cart-column">PRICE</span>
+                <span class="cart-quantity cart-header cart-column">QUANTITY</span>
+            </div>
+            <div class="cart-items">
+            </div>
+            <div class="cart-total">
+                <strong class="cart-total-title">Total</strong>
+                <span class="cart-total-price">₹0</span>
+            </div>
+            <button class="btn btn-primary btn-purchase" type="button">PURCHASE</button>
+		</section>
+		<footer>
+			<p>&copy; 2021</p>
+		</footer>
+		
+    </body>
+</html>

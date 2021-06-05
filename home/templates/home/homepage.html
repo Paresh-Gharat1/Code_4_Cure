@@ -1,0 +1,398 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>PROJECT</title>
+    
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <link rel="stylesheet" href="{% static 'home/style.css'%}">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.css" integrity="sha512-5A8nwdMOWrSz20fDsjczgUidUBR8liPYU+WymTZP1lmY9G6Oc7HlZv156XqnsgNUzTyMefFTcsFH/tnJE/+xBg==" crossorigin="anonymous" />
+    <script src="{% static 'home/index.js' %%}"></script> 
+   
+    
+</head>
+<body>
+  
+
+
+ <!-- --------------------------------------------------Header part (Navbar) Start ------------------------------------------------------------------------------------------>
+    <div class="header" id="topheader">
+      
+        <nav class="navbar navbar-expand-lg navbar-light bg-light fixed-top ">
+            
+            <a class="navbar-brand font-weight-bold text-black" href="{% url 'index' %}">Code4Cure</a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+              <span class="navbar-toggler-icon"></span>
+            </button>
+          
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+              <ul class="navbar-nav ml-auto">
+              <li style="margin-top:1.37%"       class="nav-item">
+                 <strong> Hello, {{user.username}}</strong>
+              </li> 
+                <li class="nav-item active">
+                  <a class="nav-link" href="{% url 'index' %}">Home <span class="sr-only">(current)</span></a>
+                </li>
+                <li class="nav-item dropdown">
+                  <a class="nav-link dropdown-toggle" href="{% url 'index' %}" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                   Services
+                  </a>
+                  <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                    <a class="dropdown-item" href="http://localhost:3000">Constult A doctor</a>
+                    <a class="dropdown-item" href="{% url 'check' %}">Heart Disease Scanner</a>
+                    <a class="dropdown-item" href="{% url 'cart_index' %}">Store</a>
+                    <a class="dropdown-item" href="C:\Users\Varun\Downloads\project\Code4Cure Blog page\Code4Cure Blog page\index.html">COVID-19 Blog</a>
+
+                  </div>
+                   
+                
+                <li class="nav-item">
+                  <a class="nav-link" href="#contact">Contact Us</a>
+              </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="#about">About Us</a>          
+              </li>
+              {% if user.is_authenticated %}
+              <li class="nav-item">
+                  <a class="nav-link" href="{% url 'logout' %}">Logout</a>          
+              </li>
+              {% endif %}
+              </ul>   
+        </div>
+          </nav>
+         
+          <!-----------------------------------------------------------section> ----------------------------------->
+          <section class="sect">
+            <div class ="leftside responsive">
+              <img class="resonsive" src="{% static 'home/Asset 1.png' %}">
+              </div>
+              <div class="rightside">
+                <h1>Welcome to CODE4CURE</h1>
+                <p>Your life, Our Passion Discover Code_4_Cure</p>
+                <button type="button" class="btn btn-outline-primary"><a href="#ourservices"> Services</a></button>
+                <button type="button" class="btn btn-outline-primary"><a href="#about">About Us</a></button>
+              </div>
+            </div>
+          </section>
+         </div> 
+         
+
+         <!--------------------------------------------------Header SECTION ends------------------------------------------------->
+         <!-----------------------------------------------Three Extra Header starts(ouR SERVICES)----------------------------------------------->
+         <a name="ourservices"><div class="center"><h2> Our Services </h2></div></a>
+         
+         
+         <section class="header-extradiv">
+           <div class="container">
+             <div class="row">
+
+               <div class="extra-div col-lg-4 col-md-4 col-12">
+                 <a href="http://localhost:3000"><i class="fa-3x fa fa-user-md" aria-hidden="true"></i></a>
+                 <h2>Consult A doctor</h2>
+                 <p> hello doctor is here</p>
+               </div>
+
+
+               <div class="extra-div col-lg-4 col-md-4 col-12">
+                <a href="{% url 'check' %}"><i class="fa-3x fa fa-eye" aria-hidden="true"></i></i></a>
+                <h2>Heart Disease Scanner</h2>
+                <p> hello Scanner is here</p>
+              </div>
+
+
+              <div class="extra-div col-lg-4 col-md-4 col-12">
+                <a href="{% url 'cart_index' %}"><i class="fa-3x fa fa-medkit" aria-hidden="true"></i></a>
+                <h2>Store</h2>
+                <p> hello Store is here</p>
+              </div>
+              <br>
+
+              <!---------------------------------------------------------------- slider---------------------------------------------->
+              <section class="happyclients">
+                <div class="container heading text-center">
+                  <h1> Customer Feedback</h1>
+                </div>
+
+              <div id="carouselExampleIndicators" class="carousel slide pad" data-ride="carousel">
+                <ol class="carousel-indicators">
+                  <li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
+                  <li data-target="#carouselExampleIndicators" data-slide-to="1"></li>
+                  <li data-target="#carouselExampleIndicators" data-slide-to="2"></li>
+                </ol>
+                <div class="carousel-inner">
+                  <div class="carousel-item active">
+                    <div class="container">
+                      <div class="row">
+                        <div class="col-lg-4 col-md-4 col-12">
+                          <div class="box">
+                            <a href="{% url 'index' %}"> <img src="{% static 'home/IMG_1379.jpg' %}" class="img-fluidi img-thumbnail">
+                            </a>
+                            <p class="m-4" > Really loved the way the website is designed</p>
+                            <h1>Paresh Gharat</h1>
+                            <h2>web developer</h2>
+                          </div>
+                        
+                        </div>
+                        <div class="col-lg-4 col-md-4 col-12">
+                          <div class="box">
+                            <a href="{% url 'index' %}"> <img src="{% static 'home/IMG_1531.jpg' %}" class="img-fluidi img-thumbnail">
+                            </a>
+                            <p class="m-4" > Really loved the way the website is designed</p>
+                            <h1>Paresh Gharat</h1>
+                            <h2>web developer</h2>
+                          </div>
+                        
+                        </div>
+                        <div class="col-lg-4 col-md-4 col-12">
+                          <div class="box">
+                            <a href="{% url 'index' %}"> <img src="{% static 'home/IMG_1539-2.jpg' %}" class="img-fluidi img-thumbnail">
+                            </a>
+                            <p class="m-4" > Really loved the way the website is designed</p>
+                            <h1>Paresh Gharat</h1>
+                            <h2>web developer</h2>
+                          </div>
+                        
+                        </div>
+
+
+                      </div>
+                    </div>
+                  </div>
+                  <div class="carousel-item">
+                    <div class="row">
+                        <div class="col-lg-4 col-md-4 col-12">
+                          <div class="box">
+                            <a href="{% url 'index' %}"> <img src="{% static 'home/IMG_1809.JPG' %}" class="img-fluidi img-thumbnail">
+                            </a>
+                            <p class="m-4" > Really loved the way the website is designed</p>
+                            <h1>Paresh Gharat</h1>
+                            <h2>web developer</h2>
+                          </div>
+                        
+                        </div>
+                        <div class="col-lg-4 col-md-4 col-12">
+                          <div class="box">
+                            <a href="{% url 'index' %}"> <img src="{% static 'home/IMG_6617.png' %}" class="img-fluidi img-thumbnail">
+                            </a>
+                            <p class="m-4" > Really loved the way the website is designed</p>
+                            <h1>Paresh Gharat</h1>
+                            <h2>web developer</h2>
+                          </div>
+                        
+                        </div>
+                        <div class="col-lg-4 col-md-4 col-12">
+                          <div class="box">
+                            <a href="{% url 'index' %}"> <img src="{% static 'home/IMG_7797.JPG' %}" class="img-fluidi img-thumbnail">
+                            </a>
+                            <p class="m-4" > Really loved the way the website is designed</p>
+                            <h1>Paresh Gharat</h1>
+                            <h2>web developer</h2>
+                          </div>
+                        
+                        </div>
+                        
+
+                      </div>
+                  </div>
+                  <div class="carousel-item">
+                    <div class="row">
+                      <div class="col-lg-4 col-md-4 col-12">
+                        <div class="box">
+                          <a href="{% url 'index' %}"> <img src="{static 'home/3775332.jpg' %}" class="img-fluidi img-thumbnail">
+                          </a>
+                          <p class="m-4" > Really loved the way the website is designed</p>
+                          <h1>Paresh Gharat</h1>
+                          <h2>web developer</h2>
+                        </div>
+                      
+                      </div>
+                      <div class="col-lg-4 col-md-4 col-12">
+                        <div class="box">
+                          <a href="{% url 'index' %}"> <img src="{% static 'home/3775332.jpg' %}" class="img-fluidi img-thumbnail">
+                          </a>
+                          <p class="m-4" > Really loved the way the website is designed</p>
+                          <h1>Paresh Gharat</h1>
+                          <h2>web developer</h2>
+                        </div>
+                      
+                      </div>
+                      <div class="col-lg-4 col-md-4 col-12">
+                        <div class="box">
+                          <a href="{% url 'index' %}"> <img src="{% static 'home/3775332.jpg' %}" class="img-fluidi img-thumbnail">
+                          </a>
+                          <p class="m-4" > Really loved the way the website is designed</p>
+                          <h1>Paresh Gharat</h1>
+                          <h2>web developer</h2>
+                        </div>
+                      
+                      </div>
+                      
+
+                    </div>
+                  </div>
+                </div>
+                <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
+                  <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                  <span class="sr-only">Previous</span>
+                </a>
+                <a class="carousel-control-next" href="#carouselExampleIndicators" role="button" data-slide="next">
+                  <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                  <span class="sr-only">Next</span>
+                </a>
+              </div>
+
+            </section>
+
+
+            </div>
+            </div>
+
+          </section>
+          
+
+
+
+
+
+            <!-------------------------------------------------------------------contact us------------------------------------------------->
+            
+            <a name="contact">
+            <section class="contactUs">
+              <div class="container heading text-center">
+                <h1> Contact us</h1>
+                <p>We are Happy to Help you, Feel Free to Contact Us</p>
+              </div>
+          
+              
+              <div class="container">
+                <div class="row">
+                  <div class="col-lg-8 col-md-8 col-10 offset-lg-2 offset-md-2 col-1">
+
+                    <form method = "post" action = "{% url "index" %}">
+                    {% csrf_token %}
+                      <div class="form-group">
+                        <input type="text" class="form-control" placeholder="Enter your Name" id="name" name = "full_name" required autocomplete="off">
+                      </div>
+                      <div class="form-group">
+                        <div class="form-group">
+                          <input type="email" class="form-control" placeholder="Enter Email" id="email" name = "email" required autocomplete="off">
+                        </div>
+                        <div class="form-group">
+                          <div class="form-group">
+                            <input type="text" class="form-control" placeholder="Enter Your Mobile number" id="mobilenumber" name = "number" required autocomplete="off">
+                          </div>
+                          <div class="form-group">
+
+
+           
+                          <div class="form-group">
+                            <div class="form-group">
+              
+                              <textarea class="form-control" rows="5" id="message"placeholder="Enter Your Message" name = "text" required autocomplete="off"></textarea>
+                            </div>
+                            <div class="d-flex justify-content-center">
+                      <button  type="submit" class="btn btn-info" onclick="myFunction()">Submit</button>
+                      <div id="snackbar">Successfully submitted Request</div>
+                      </div>
+                    </form>
+
+                     
+                  </div>
+                </div>
+              </div>
+            </section>
+          </a>
+
+
+
+      <!----------------------------------------------------------------------contact Us end-------------------------------------------------------->
+
+
+      <!----------------------------------------------------------------------About Us--------------------------------------------------------------->
+      <a name="about">
+      <section class="aboutus">
+        <div class="container heading text-center">
+          <h1> About us</h1>
+          <div><p class="text">
+            We at a code4cure are an medical established organization that helps people in any medicative complications and difficulties. We work together to help, prevent, and cure any ailment that a person has aquired. Code4cure have expert specialists that will help you 24/7 and will guide you step-by-step for you better life. These specialists are trained and experienced in various medicinal fields and recommend you the best quality services and hospitality you deserve.
+        </p>
+        <h2>Design Team:</h2>
+        <br>
+        <br>
+        <ol class="members">
+            <li>Anvesh Audichya</li>
+            <li>Ayush Tiwari</li>
+            <li>Ayushman Vashista</li>
+            <li>Debangik Bose</li>
+            <li>Faraz Khan</li>
+            <li>Misha Sharma</li>
+            <li>Paresh Sajan Gharat</li>       
+            <li>Puneet Kumar</li>              
+            <li>Sarthak Mishra</li>
+            <li>Varun Gupta</li>
+        </ol>
+        </div>
+      </section>
+      </a>
+      <!-----------------------------------------------------------------------------About US end---------------------------------------------------->
+      <!------------------------------------------------------------------------FOOTER--------------------------------------------------------------->
+      <footer class="footersection" id="footerdiv">
+      <div class="container">
+        <div class="row">
+          <div class="col-lg-4 col-md-6 col-12 footer-div">
+            <div>
+              <h3>ABOUT CODE4CURE</h3>
+              <p> hello my name is code4cure</p>
+
+            </div>
+          </div>
+
+          <div class="col-lg-4 col-md-6 col-12 footer-div text-center">
+            <div>
+              <h3>Navigation link</h3>
+              <li><a href="{% url 'index' %}">Home</a></li>
+              <li><a href="#ourservices">services</a></li>
+              <li><a href="{% url 'index' %}">Information on Disease</a></li>
+              <li><a href="#contact">Contact Us</a></li>
+
+            </div>
+          </div>
+
+
+          <div class="col-lg-4 col-md-12 col-12 footer-div">
+            <div class="hello1">
+              <h3>Email Support</h3>
+              <p> pareshgharat55@hotmail.com </p>
+
+            </div> 
+
+          
+
+
+
+        </div>
+      </div>
+
+      <div class="mt-5 text-center">
+        <P>Copyright ©2020 All right Reserved | Code4Cure </P>
+      </div>
+
+     
+      
+    
+
+      </div>
+      </footer>
+
+
+    </div>
+
+
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</body>
+</html>

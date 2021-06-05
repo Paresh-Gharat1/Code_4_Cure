@@ -1,0 +1,287 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+   
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
+
+    <title>Heart Health Checker</title>
+  </head>
+<style>
+* { 
+        box-sizing: border-box; 
+    } 
+   
+    body {  
+        margin-bottom: 0px; 
+    } 
+   
+    /* Navlist designing */
+    #navlist { 
+        overflow: hidden; 
+
+background-color:#16c9f6;
+opacity:0.9;
+        padding: 40px 10px; 
+        transition: 0.4s; 
+        position: fixed; 
+        width: 100%; 
+        top: 0; 
+        z-index: 1; 
+    } 
+  
+    #navlist a { 
+        float: left; 
+        color: white; 
+        text-align: center; 
+        padding: 12px; 
+        text-decoration: none; 
+        font-size: 18px;  
+        line-height: 25px; 
+        border-radius: 4px; 
+    } 
+   
+    #navlist #logo { 
+        font-size: 35px; 
+        font-weight: bold; 
+        transition: 0.4s; 
+    } 
+   
+    #navlist a:hover { 
+        color: #01FE06; 
+    } 
+   
+    #navlist-right { 
+        float: right; 
+    } 
+       
+    /* Content desing */
+    .content { 
+        margin-top:130px; 
+margin-bottom:0px; 
+        padding:15px 15px 1800px; 
+        font-size:22px; 
+    } 
+@keyframes slidein {
+  0% {
+    margin-left: -100%;
+  }
+  50% {
+    margin-left: 0%;
+  }
+  100% {
+    margin-left: 0%;
+  }
+}
+body{
+font-family:corbel;
+background-image:url("bg2.jpg");
+background-attachment:fixed;
+background-size:100%;
+}
+a{
+animation-duration: 2s;
+animation-name:slidein;
+animation-iteration-count: 4s;
+}
+div{
+font-size:100%;
+margin-bottom:0%;
+}
+label{
+text-shadow:1px 1px 2px black;
+}
+</style>
+  <body>
+
+<div id="navlist" style="text-align:center; font-family:cooper;"> 
+        <a href="#default" style="font-size:250%;" id="logo"> 
+	Heart Health Checker
+        </a> 
+      
+        <div id="navlist-right"> 
+            <a href="{% url 'index' %}">Home</a>
+        </div> 
+    </div> 
+ 
+    <!-- Page Content -->
+<div class="content" style="padding-bottom: 2.5%;">
+<p style="text-align:center;font-size:120%;"><b>Please use genuine report for getting result (this is probablistic results based on past experience of the patients).</b></p>
+    <hr />
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js" integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js" integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV" crossorigin="anonymous"></script>
+    
+
+    <form class="needs-validation" method = "POST" novalidate style="margin-bottom:0%;padding-bottom:0%;">
+        {% csrf_token %}
+
+       <label for="validationCustom01" style="float: left">Age : </label>
+      <input type="text" class="form-control" id="validationCustom01" style="width: 10%;" name = "age" required/>
+      <div class="valid-feedback">
+      </div>
+        <div class="col-md-2 mb-3">
+    </div>
+
+      <label for="validationCustom02" style="float: left">Chest Pain Type : </label>
+      <input type="text" style="width: 10%;" class="form-control" id="validationCustom02" name = "cp" required>
+      <div class="valid-feedback">
+      </div>
+    <div class="col-md-2 mb-3">
+    </div>
+
+        <label for="validationCustom03" style="float: left">ST depression induced by exercise relative to rest : </label>
+      <input type="text" class="form-control" style="width: 10%;" id="validationCustom03" name = "oldpeak" required>
+      <div class="valid-feedback">
+      </div>
+<div class="col-md-2 mb-3">
+    </div>
+
+      <label for="validationCustom04" style="float: left">Resting B.P. : </label>
+      <input type="text" style="width: 10%;" class="form-control" id="validationCustom04" size="4" name = "trestbps" required>
+      <div class="invalid-feedback">
+        Please provide a valid resting blood pressure.
+      </div>
+    <div class="col-md-2 mb-3">
+  </div>
+
+      <label for="validationCustom05" style="float: left">Gender : </label>
+      <select class="custom-select" style="width:10%;" id="validationCustom05" name = "gender" required>
+        <option selected disabled value="">Choose...</option>
+        <option>Male</option>
+        <option>Female</option>
+      </select>
+      <div class="invalid-feedback">
+        Please select a valid gender.
+      </div>
+    <div class="col-md-3 mb-3">
+    </div>
+
+      <label for="validationCustom06" style="float: left">Fasting Blood Sugar (1 = True and 0 = False) : </label>
+      <select class="custom-select" style="width: 10%;" id="validationCustom06" name = "fbs" required>
+        <option selected disabled value="">Choose...</option>
+        <option>0</option>
+        <option>1</option>
+      </select>
+      <div class="invalid-feedback">
+        Please select a valid fasting blood sugar value.
+      </div>
+    <div class="col-md-3 mb-3">
+    </div>
+
+      <label for="validationCustom07" style="float: left">Resting Electrocardiographic Results (1 = True and 0 = False) : </label>
+      <select class="custom-select" style="width:10%;" id="validationCustom07" name = "restecg" required>
+        <option selected disabled value="">Choose...</option>
+        <option>0</option>
+        <option>1</option>
+      </select>
+      <div class="invalid-feedback">
+        Please select a valid resting electrocardiographic results.
+      </div>
+    <div class="col-md-3 mb-3">
+    </div>
+
+      <label for="validationCustom08" style="float: left">Exercise Induced Angina (1 = True and 0 = False) : </label>
+      <select class="custom-select" style="width:10%;" id="validationCustom08" name = "exang" required>
+        <option selected disabled value="">Choose...</option>
+        <option>0</option>
+        <option>1</option>
+      </select>
+      <div class="invalid-feedback">
+        Please select a valid exercise induced angina.
+      </div>
+    <div class="col-md-3 mb-3">
+    </div>
+
+      <label for="validationCustom09" style="float: left">The slope of the peak exercise ST segment : </label>
+      <select class="custom-select" style="width:10%;" id="validationCustom09" name = "slope" required>
+        <option selected disabled value="">Choose...</option>
+        <option>0</option>
+        <option>1</option>
+        <option>2</option>
+      </select>
+      <div class="invalid-feedback">
+      </div>
+    <div class="col-md-3 mb-3">
+    </div>
+
+      <label for="validationCustom10" style="float: left">Number of major vessels (0-3) colored by flourosopy</label>
+      <select class="custom-select" style="width:10%;" id="validationCustom10" name = "ca" required>
+        <option selected disabled value="">Choose...</option>
+        <option>0</option>
+        <option>1</option>
+        <option>2</option>
+        <option>3</option>
+      </select>
+      <div class="invalid-feedback">
+      </div>
+    <div class="col-md-3 mb-3">
+    </div>
+
+      <label for="validationCustom11" style="float: left">Thal: 1 = normal; 2 = fixed defect; 3 = reversable defect : </label>
+      <select class="custom-select" style="width:10%;" id="validationCustom11" name = "thal" required>
+        <option selected disabled value="">Choose...</option>
+        <option>1</option>
+        <option>2</option>
+        <option>3</option>
+      </select>
+      <div class="invalid-feedback">
+      </div>
+    <div class="col-md-3 mb-3">
+    </div>
+
+      <label for="validationCustom12" style="float: left">Serum Cholestoral : </label>
+      <input type="text" class="form-control" style="width:10%;" id="validationCustom12" name = "chol" required>
+      <div class="invalid-feedback">
+        Please provide a valid Serum Cholestrol.
+      </div>
+    <div class="col-md-3 mb-3">
+    </div>
+
+      <label for="validationCustom13" style="float: left">Max Heart Rate Achieved : </label>
+      <input type="text" class="form-control" style="width:10%;" id="validationCustom13" name = "thalach" required>
+      <div class="invalid-feedback">
+        Please provide maximum heart rate achieved.
+      </div>
+    <div class="col-md-3 mb-3">
+    </div>
+  <hr />
+  <div class="form-group">
+    <div class="form-check">
+      <input class="form-check-input" type="checkbox" style="width:20px;height:20px" value="" id="invalidCheck" required>
+      <label class="form-check-label" for="invalidCheck">
+        Agree to terms and conditions &nbsp;&nbsp;
+      </label> 
+      <div class="invalid-feedback">
+        You must agree before submitting.
+      </div>
+    </div>
+  </div>
+  <button class="btn btn-primary" type="submit" style="font-size:20px; margin-bottom:0%;">Submit form</button>
+</form>
+
+<script>
+// Example starter JavaScript for disabling form submissions if there are invalid fields
+(function() {
+  'use strict';
+  window.addEventListener('load', function() {
+    // Fetch all the forms we want to apply custom Bootstrap validation styles to
+    var forms = document.getElementsByClassName('needs-validation');
+    // Loop over them and prevent submission
+    var validation = Array.prototype.filter.call(forms, function(form) {
+      form.addEventListener('submit', function(event) {
+        if (form.checkValidity() === false) {
+          event.preventDefault();
+          event.stopPropagation();
+        }
+        form.classList.add('was-validated');
+      }, false);
+    });
+  }, false);
+})();
+</script>
+</div> 
+  </body>
+</html>
